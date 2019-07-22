@@ -1,0 +1,24 @@
+<h1>My Books</h1>
+<input type='text' [(ngModel)]='searchFilter' >
+<br>
+<table class="table table-dark table-striped table-bordered" >
+    <tr>
+        <th>#</th>
+        <th scope="col">ISBN</th> 
+        <th>Title</th>
+        <th>Likes</th>
+        <th>DisLikes</th>
+    </tr>
+    <tr *ngFor="let b of books | tfilter:searchFilter | bpricepipe :[30,500] ; let i = index" scope="row" (click)='selectedbook = b' [class.activeRow]="b == selectedbook">
+        <td>{{i}}</td>
+        <td [innerText]='b.ISBN'></td>
+        <td>{{b.Title}}</td>
+        <td>{{b.likes}}</td>
+        <td>{{b.disLikes}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<app-child [book]='selectedbook'></app-child>

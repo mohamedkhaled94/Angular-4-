@@ -1,0 +1,13 @@
+<div *ngIf="book">
+    <b>ISBN : </b>{{book.ISBN}}
+    <br>
+    <b>Title : </b>{{book.Title | uppercase}}
+    <br>
+    <b>Price : </b>{{book.price | double |currency : 'EUR':true :'4.2-2'}}
+    <br>
+    <b>Discount Rate : </b>{{book.discountRate}}
+    <br>
+    <b>{{date | date}}</b>
+    <br>
+    <app-likes (likechange)='HandleLikes($event)'></app-likes>
+</div>

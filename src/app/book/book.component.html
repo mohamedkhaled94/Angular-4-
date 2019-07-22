@@ -1,0 +1,15 @@
+<p>book works!</p>
+<h1>Hello From The Other Side </h1>
+<p> Adele</p>
+<div>ISBN = <b>{{book.ISBN}}</b>
+    Title : <b>{{book.Title}}</b>
+    <div [innerText]='book.price'></div>
+    <div [innerText]='book.calcprice()'
+    [class.discount]='book.discountRate'></div>
+    <!--<input type="number" (input)='ChangePrice($event)' [value]='book.price' >-->
+    <!--<input type="number"  [(ngModel)]='book.price' />-->
+    <button (click)='DoSomething()'>DoSomething</button>
+</div>
+<button (click)='visible = !visible'>Show/Hide</button>
+<br>
+<img  *ngIf = 'visible'[src]='book.Imageurl' [alt]='book.Title' [title]='book.Title'/>
